@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox: flex-direction y justify-content</title>
+<style>
+
+  body{
+    background-color: orange;
+  }
+
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+  }
+  .box {
+    width: 50px;
+    height: 100px;
+    background-color: rgb(163, 211, 237);
+    border: 1px solid black;
+    margin: 0px;
+  }
+</style>
+</head>
+<body>
+<h2>Flexbox: flex-direction</h2>
+<label for="direction-select">Selecciona una dirección:</label>
+<select id="direction-select">
+  <option value="row">Row</option>
+  <option value="column">Column</option>
+  <option value="row-reverse">Row-reverse</option>
+  <option value="column-reverse">Column-reverse</option>
+</select>
+
+<h2>Flexbox: justify-content</h2>
+<label for="justify-select">Selecciona una distribución:</label>
+<select id="justify-select">
+  <option value="flex-start">Flex-start</option>
+  <option value="flex-end">Flex-end</option>
+  <option value="center">Center</option>
+  <option value="space-between">Space-between</option>
+  <option value="space-around">Space-around</option>
+  <option value="space-evenly">Space-evenly</option>
+</select>
+
+<div id="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+<script>
+const container = document.getElementById('container');
+const directionSelect = document.getElementById('direction-select');
+const justifySelect = document.getElementById('justify-select');
+
+directionSelect.addEventListener('change', () => {
+  container.style.flexDirection = directionSelect.value;
+});
+
+justifySelect.addEventListener('change', () => {
+  container.style.justifyContent = justifySelect.value;
+});
+</script>
+</body>
+</html>
